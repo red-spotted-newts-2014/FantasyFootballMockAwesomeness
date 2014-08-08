@@ -164,6 +164,7 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   capybara
   coffee-rails (~> 4.0.0)
+  factory_girl
   database_cleaner
   factory_girl_rails
   faker
