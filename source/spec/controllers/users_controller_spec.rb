@@ -5,24 +5,19 @@ describe UsersController do
   before :each do
     FactoryGirl.reload
   end
-  let(:sid) {FactoryGirl.create :user}
-    describe 'GET #new' do
-      it "renders the :new template" do
-        get :new
-        expect(:response).to render_template :new
+   let(:user) { FactoryGirl.create :user }
+    context "#create_user" do
+      it "redirects to root path if correct credentials" do
+        post :create_user, :user => user.slice(:email, :password)
+        expect(response).to redirect_to root_path
       end
-    end
-  end
-    describe 'create' do
-      it 'should create a user successfully' do
-      post :create, FactoryGirl.attributes_for(:user, user: @user)
-      response.should be_success
-    end
-
-    describe 'index' do 
-      it 'should allow user to view main page' do 
-        get :index 
-        expect(:response).to render_template :index
+      it "redirects to sign in path with bad email" do
+        post :create_user, :user => user.slice(:password)
+        expect(response).to redirect_to users_signup_path
+      end
+      it "redirects to sign in path with bad password" do
+        post :create_user, :user => user.slice(:email)
+        expect(response).to redirect_to users_signup_path
       end
     end
 end

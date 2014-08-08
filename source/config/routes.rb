@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get '/users/login', to: 'users#login'
   post '/users/authenticate', to: 'users#authenticate'
+  get '/users/signup', to: 'users#signup'
+  post '/users/create_user', to: 'users#create_user'
 
   # get 'users/login' => 'users#login', :as => 'login'
 
