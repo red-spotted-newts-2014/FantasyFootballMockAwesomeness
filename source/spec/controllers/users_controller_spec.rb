@@ -11,13 +11,13 @@ describe UsersController do
         post :create_user, :user => user.slice(:email, :password)
         expect(response).to redirect_to root_path
       end
-      # it "redirects to sign in path with bad email" do
-      #   post :create_user, :email => "wrong@email.com", :password => user.password
-      #   expect(response).to redirect_to new_admin_session_path
-      # end
-      # it "redirects to sign in path with bad password" do
-      #   post :create_user, :email => user.email, :password => "wrong password"
-      #   expect(response).to redirect_to new_admin_session_path
-      # end
+      it "redirects to sign in path with bad email" do
+        post :create_user, :user => user.slice(:password)
+        expect(response).to redirect_to users_signup_path
+      end
+      it "redirects to sign in path with bad password" do
+        post :create_user, :user => user.slice(:email)
+        expect(response).to redirect_to users_signup_path
+      end
     end
 end
