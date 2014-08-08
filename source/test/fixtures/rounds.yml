@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  round_number: 1
+  draft_id: 
+
+two:
+  round_number: 1
+  draft_id: 
