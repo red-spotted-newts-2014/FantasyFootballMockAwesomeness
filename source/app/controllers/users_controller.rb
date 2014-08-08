@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       session[:user] = @user.id
       redirect_to '/', flash: {notice: "Successful log in!"}
     else
-      redirect_to users_login, flash: {notice: 'Invalid credentials!' }
+      redirect_to users_login_path, flash: {notice: 'Invalid credentials!' }
     end
   end
 
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
       session[:user] = @user.id
       redirect_to '/', flash: {notice: 'Successful log in!'}
     else
-      redirect_to signup, flash: {notice: 'Failed'}
+      redirect_to users_signup_path, flash: {notice: 'Failed'}
     end
   end
 
@@ -36,6 +36,7 @@ class UsersController < ApplicationController
 private
 
   def user_params(params)
+    # { :user => { :password => ..., :email => ... } }
     params.require(:user).permit(:email, :password)
   end
 
