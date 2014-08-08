@@ -14,6 +14,9 @@
 ActiveRecord::Schema.define(version: 20140808014540) do
 
   create_table "drafts", force: true do |t|
+    t.string   "difficulty_level"
+    t.string   "draft_type"
+    t.integer  "number_of_rounds"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
