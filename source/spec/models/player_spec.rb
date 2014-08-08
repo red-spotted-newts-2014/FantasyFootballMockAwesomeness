@@ -1,6 +1,11 @@
 require 'spec_helper'
 
 describe Player do
+   it "is valid player" do
+    player = (Player.new(rank: 7, first_name: "Anthony", last_name: "Edwards", position: "QB", bye_week: 7, ADP: 3.55))
+    expect(player).to be_valid
+  end
+
 
   it "is invalid without first_name" do
     expect(Player.new(first_name: nil)).to_not be_valid
@@ -24,6 +29,11 @@ describe Player do
 
   it "is invalid without ADP" do
    expect(Player.new(ADP: nil)).to_not be_valid
+  end
+
+  it "returns first_name as a string" do
+    player = (Player.new(rank: 7, first_name: "Anthony", last_name: "Edwards", position: "QB", bye_week: 7, ADP: 3.55))
+    expect(player.first_name).to eq("Anthony")
   end
 
 end
