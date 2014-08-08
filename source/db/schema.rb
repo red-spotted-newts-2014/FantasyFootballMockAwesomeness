@@ -27,12 +27,12 @@ ActiveRecord::Schema.define(version: 20140808014540) do
   create_table "picks", force: true do |t|
     t.integer  "pick_number"
     t.integer  "user_id"
-    t.integer  "round_id"
+    t.integer  "draft_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "picks", ["round_id"], name: "index_picks_on_round_id"
+  add_index "picks", ["draft_id"], name: "index_picks_on_draft_id"
   add_index "picks", ["user_id"], name: "index_picks_on_user_id"
 
   create_table "players", force: true do |t|
@@ -48,15 +48,6 @@ ActiveRecord::Schema.define(version: 20140808014540) do
   end
 
   add_index "players", ["pick_id"], name: "index_players_on_pick_id"
-
-  create_table "rounds", force: true do |t|
-    t.integer  "round_number"
-    t.integer  "draft_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "rounds", ["draft_id"], name: "index_rounds_on_draft_id"
 
   create_table "users", force: true do |t|
     t.string   "email"
