@@ -5,12 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+require 'csv'
 sid = User.create(email: "sidpatel13@gmail.com", password_digest: "password")
 
-draft1 = sid.drafts.create()
-
-pick = draft1.picks.create(pick_number: 1, user_id: 1)	
-pick2 = draft1.picks.create(pick_number: 2)
-
-Player.create(rank: 1, first_name: "Adrian", last_name: "Peterson", position: "RB", bye_week: 7, ADP: 2.24, pick_id: 1)
+CSV.foreach('db/fmd_player_rankings.csv', :headers => true, :col_sep => ',') do |row|
+  Player.create(rank: row[0], first_name: row[3], last_name: row[2], position: row[4], bye_week: row[7], ADP: row[6])
+end
