@@ -10,9 +10,9 @@ sid = User.create(email: "sidpatel13@gmail.com", password_digest: "password")
 
 draft1 = sid.drafts.create()
 
-round = Round.create(round_number: 1, draft_id: draft1.id)
+pick = draft1.picks.create(pick_number: 1, user_id: 1)
+pick2 = draft1.picks.create(pick_number: 2)
 
-pick = round.picks.create(pick_number: 1, user_id: 1, round_id: 1)
 
 Player.create(rank: 1, first_name: "Adrian", last_name: "Peterson", position: "RB", bye_week: 7, ADP: 2.24, pick_id: 1)
 
