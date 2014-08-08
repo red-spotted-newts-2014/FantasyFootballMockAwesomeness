@@ -6,7 +6,6 @@ describe Player do
     expect(player).to be_valid
   end
 
-
   it "is invalid without first_name" do
     expect(Player.new(first_name: nil)).to_not be_valid
   end

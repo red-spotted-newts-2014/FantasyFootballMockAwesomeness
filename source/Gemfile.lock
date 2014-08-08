@@ -28,6 +28,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    bcrypt (3.1.7)
     bcrypt-ruby (3.0.1)
     builder (3.2.2)
     capybara (2.4.1)
@@ -161,6 +162,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   bcrypt-ruby (~> 3.0.0)
   capybara
   coffee-rails (~> 4.0.0)
