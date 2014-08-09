@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post '/users/authenticate', to: 'users#authenticate'
   get '/users/signup', to: 'users#signup'
   post '/users/create_user', to: 'users#create_user'
+  get '/computers/index', to: 'computers#index'
 
   # get 'users/login' => 'users#login', :as => 'login'
 
