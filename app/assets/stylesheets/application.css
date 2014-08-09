@@ -13,3 +13,78 @@
  *= require_tree .
  *= require_self
  */
+table, tbody, tfoot, thead, tr, th, td {
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  margin: auto;
+  width: 900px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+tr, th, td,thead, tbody, caption {
+    border: 1px solid black;
+}
+tr{
+  height: 4em;
+}
+caption{
+  height: 4em;
+  line-height: 100px;
+  background-color: #A8B191;
+  font-size: 30px;
+}
+tbody tr:nth-child(odd){
+  background-color: #A8B191;
+}
+
+
+/*queve*/
+
+table.queve, table.picked {
+  table-layout: fixed;
+  height: 200px;
+  width: 400px;
+}
+
+table.queve tr, table.picked tr {
+ height: 20px;
+ text-align: center;
+}
+
+table.queve caption, table.picked caption{
+ height: 30px;
+ text-align: center;
+ font-size: 20px;
+ line-height: 30px;
+}
+
+table.queve td:nth-child(1){
+width: 30px;
+}
+table.queve td:nth-child(2){
+width: 100px;
+}
+table.queve td:nth-child(3){
+width: 30px;
+}
+table.queve td:nth-child(4){
+width: 20px;
+}
+
+table.queve, table.picked {
+  max-height: 100px;
+  width: 100%;
+  overflow: scroll;
+}
+.queve-table{
+  max-height: 200px;
+  width: 400px;
+  overflow-y: scroll;
+}
