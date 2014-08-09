@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function(){
 
   // INITIALIZE DRAFT BOARD
-  
+
   var you = 1;
   var computers = 3;
   var rounds = 12;
@@ -26,14 +26,19 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 function pickPlayer(e){
-  var playerID = e.target.id;
   var table = document.querySelector("table");
   var playerName = e.target.parentNode.parentNode.children[1].innerHTML;
-
+  var playerid = e.target.id
   addToBoard(e.target, playerName);
   removeFromList(e.target);
   addToPickedBoard(e.target);
-
+  $.ajax({
+    url:"/update",
+    method:"POST",
+    data:playerid
+  }).success(function(data) {
+    console.log("got success")
+  }).fail(function(){console.log("FAILURE")})
 }
 
 function addToBoard(e, playerName){
