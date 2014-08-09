@@ -206,6 +206,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport
   bcrypt
   bcrypt-ruby (~> 3.0.0)
   capybara
