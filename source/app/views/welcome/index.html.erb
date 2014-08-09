@@ -36,7 +36,7 @@
                 <% Player.all.each do |player| %>
             <tr>
               <td id="rank"><%= player.rank %></td>
-              <td id="first_name"><%= player.first_name %> <%= player.last_name %></td>
+              <td id="name"><%= player.first_name %> <%= player.last_name %></td>
               <td id="position"><%= player.position %></td>
               <td><button id="<%= player.id %>" class="xsmall-button">pick</button></td>
             </tr>

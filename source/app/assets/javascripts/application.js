@@ -5,10 +5,11 @@ document.addEventListener('DOMContentLoaded', function(){
   var you = 1;
   var computers = 3;
   var rounds = 12;
-  
+  var table = document.querySelector("table");
+  var buttons = document.querySelectorAll("button");
+
   // Make user the first row.
 
-  var table = document.querySelector("table");
   table.rows[1].insertCell(-1).innerHTML = "You";
 
   // Make the other rows for the computer.
@@ -19,8 +20,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // Adds event listener to buttons in list of available players.
 
-  var buttons = document.querySelectorAll("button");
-
   for (var i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener("click", pickPlayer);
   };
@@ -29,37 +28,23 @@ document.addEventListener('DOMContentLoaded', function(){
 function pickPlayer(e){
   var playerID = e.target.id;
   var table = document.querySelector("table");
+  var playerName = e.target.parentNode.parentNode.children[1].innerHTML;
 
-  addToBoard(e.target);
+  addToBoard(e.target, playerName);
   removeFromList(e.target);
   addToPickedBoard(e.target);
+
 }
 
-function addToBoard(e){
-  
+function addToBoard(e, playerName){
   var table = document.querySelector("table");
-  var tbody = document.querySelector("table").querySelector("tbody").children;
-  var rounds = 12;
-  var comp_players = 3;
-  console.log(table);
-
-  // console.log(tbody)
-  // for(var pl = 0; pl <= rounds; pl++){
-  //   for(var num = 0; num < comp_players; num++){
-  //     var x = table.rows[num+2].insertCell(-1);
-  //     x.innerHTML="anth"
-  //   }
-  //     var x = table.rows[1].insertCell(-1);
-  //     x.innerHTML="you"
-  // }
-  // var x = table.rows[3].insertCell(-1);
-  // x.innerHTML="New cell";
+  var entry = table.rows[1].insertCell(-1);
+  entry.innerHTML = playerName;
 };
 
 function addToPickedBoard(e){
-  console.log(e.id);
   var row = e.parentNode.parentNode;
-  console.log(row.deleteCell(-1));
+  row.deleteCell(-1)
   document.querySelector(".picked").appendChild(row);
 };
 
