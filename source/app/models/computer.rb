@@ -16,6 +16,10 @@ class Computer < ActiveRecord::Base
   	unpicked_players = self.all_players - pick_player_array
   end
 
+  def computer_picks(num_of_picks)
+  	num_of_comp_picks = num_of_picks - 1
+  	comp_pick_array = self.unpicked_players.slice(num_of_comp_picks)
+  end
 
 end
 
