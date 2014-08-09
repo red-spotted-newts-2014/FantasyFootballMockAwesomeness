@@ -1,0 +1,106 @@
+<div class="style-div">
+      <table id="mock-draft-table">
+       <caption>Fantasy Mock Draft</caption>
+       <thead>
+         <!--  <tr>
+             <th colspan="2" rowspan="2"></th>
+             <th rowspan="2">Column 1</th>
+             <th colspan="2">Column 2</th>
+          </tr> -->
+          <tr>
+              <th> </th>
+             <th>Round 1 </th>
+             <th>Round 2</th>
+             <th>Round 3 </th>
+             <th>Round 4</th>
+             <th>Round 5 </th>
+             <th>Round 6</th>
+             <th>Round 7 </th>
+             <th>Round 8</th>
+             <th>Round 9 </th>
+             <th>Round 10</th>
+             <th>Round 11 </th>
+             <th>Round 12</th>
+          </tr>
+       </thead>
+       <tbody>
+          <tr></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr></tr>
+       </tbody>
+      </table>
+    </div>
+         <h2 id="que">Que Queve</h2>
+      <section>
+        <div class="queve-table">
+
+          <table class="queve">
+            <caption>Available Players</caption>
+            <tbody>
+                <% Player.all.each do |player| %>
+            <tr>
+              <td><%= player.rank %></td>
+              <td><%= player.first_name %> <%= player.last_name %></td>
+              <td><%= player.position %></td>
+              <td><button id="<%= player.id %>" class="xsmall-button">pick</button></td>
+            </tr>
+            <% end %>
+          </tbody>
+          </table>
+        </div>
+      </section>
+
+      <h2 id="picked-players">Picked Players</h2>
+       <section>
+        <div class="queve-table">
+          <table class="queve">
+            <caption>Picked Players</caption>
+            <tbody>
+            <tr>
+              <td>1</td>
+              <td>name</td>
+              <td>po</td>
+
+            </tr>
+              <tr>
+              <td>3</td>
+              <td>namefffffffffffffffffffff</td>
+              <td>position</td>
+
+            </tr>
+              <tr>
+              <td>100</td>
+              <td>name</td>
+              <td>position</td>
+
+            </tr>
+              <tr>
+              <td>200</td>
+              <td>name</td>
+              <td>position</td>
+
+            </tr>
+              <tr>
+              <td>400</td>
+              <td>name</td>
+              <td>position</td>
+
+            </tr>
+              <tr>
+              <td>10</td>
+              <td>name</td>
+              <td>linebacker</td>
+
+            </tr>
+              <tr>
+              <td>50</td>
+              <td>name</td>
+              <td>QB</td>
+
+          </tbody>
+          </table>
+        </div>
+      </section>
+
+
