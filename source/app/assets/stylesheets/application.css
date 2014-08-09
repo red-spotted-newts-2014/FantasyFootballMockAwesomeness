@@ -28,9 +28,12 @@ table {
   border: 1px solid black;
   border-radius: 10px;
 }
+
 tr, th, td,thead, tbody, caption {
+    background-color: white;
     border: 1px solid black;
 }
+
 tr{
   height: 4em;
 }
