@@ -29,7 +29,7 @@ function pickPlayer(e){
 
   addToBoard();
   removeFromList(e.target);
-  addToPickedBoard();
+  addToPickedBoard(e.target);
 
 }
 
@@ -39,10 +39,14 @@ function addToBoard(){
   // x.innerHTML="New cell";
 };
 
-function addToPickedBoard(){}
+function addToPickedBoard(e){
+  console.log(e.id);
+  var row = e.parentNode.parentNode;
+  console.log(row.deleteCell(-1));
+  document.querySelector(".picked").appendChild(row);
+};
 
 function removeFromList(e){
-  console.log(e);
   e.parentNode.parentNode.parentNode.removeChild(e.parentNode.parentNode);
 };
 

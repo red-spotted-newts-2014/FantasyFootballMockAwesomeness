@@ -40,9 +40,9 @@
             <tbody>
                 <% Player.all.each do |player| %>
             <tr>
-              <td><%= player.rank %></td>
-              <td><%= player.first_name %> <%= player.last_name %></td>
-              <td><%= player.position %></td>
+              <td id="rank"><%= player.rank %></td>
+              <td id="first_name"><%= player.first_name %> <%= player.last_name %></td>
+              <td id="position"><%= player.position %></td>
               <td><button id="<%= player.id %>" class="xsmall-button">pick</button></td>
             </tr>
             <% end %>
@@ -54,50 +54,14 @@
       <h2 id="picked-players">Picked Players</h2>
        <section>
         <div class="queve-table">
-          <table class="queve">
+          <table class="picked">
             <caption>Picked Players</caption>
             <tbody>
             <tr>
-              <td>1</td>
-              <td>name</td>
-              <td>po</td>
-
+              <td>Rank</td>
+              <td>Name</td>
+              <td>Position</td>
             </tr>
-              <tr>
-              <td>3</td>
-              <td>namefffffffffffffffffffff</td>
-              <td>position</td>
-
-            </tr>
-              <tr>
-              <td>100</td>
-              <td>name</td>
-              <td>position</td>
-
-            </tr>
-              <tr>
-              <td>200</td>
-              <td>name</td>
-              <td>position</td>
-
-            </tr>
-              <tr>
-              <td>400</td>
-              <td>name</td>
-              <td>position</td>
-
-            </tr>
-              <tr>
-              <td>10</td>
-              <td>name</td>
-              <td>linebacker</td>
-
-            </tr>
-              <tr>
-              <td>50</td>
-              <td>name</td>
-              <td>QB</td>
-
           </tbody>
           </table>
         </div>
