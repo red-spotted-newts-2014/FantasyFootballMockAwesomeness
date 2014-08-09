@@ -11,14 +11,16 @@ document.addEventListener('DOMContentLoaded', function(){
   var table = document.querySelector("table");
   table.rows[1].insertCell(-1).innerHTML = "You";
 
-  
-  for (var i = 0; i <= (you + computers); i++) {
+  // Make the other rows for the computer.
 
+  for (var i = 2; i <= (you + computers); i++) {
+    table.rows[i].insertCell(-1).innerHTML = "Computer";
   }
+
+  // Adds event listener to buttons in list of available players.
 
   var buttons = document.querySelectorAll("button");
 
-  // Adds event listener to buttons in list of available players.
   for (var i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener("click", pickPlayer);
   };
