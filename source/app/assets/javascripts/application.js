@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
 
   var table = document.querySelector("table");
-  // tbody = document.querySelector("table").querySelector("tbody").children.length
   var tbody = document.querySelector("table").querySelector("tbody").children;
   var rounds = 12;
   var comp_players = 3;
@@ -13,23 +12,37 @@ document.addEventListener('DOMContentLoaded', function(){
       x.innerHTML="anth"
     }
       var x = table.rows[1].insertCell(-1);
-      // <user input>
       x.innerHTML="you"
   }
 
   var buttons = document.querySelectorAll("button");
 
+  // addEventListener
   for (var i = 0; i < buttons.length; i++) {
-      buttons[i].addEventListener("click", appendToDraftBoard);
+      buttons[i].addEventListener("click", pickPlayer);
   };
-
 });
 
-function appendToDraftBoard(e){
+function pickPlayer(e){
   var playerID = e.target.id;
   var table = document.querySelector("table");
-  // console.log(table)
+
+  addToBoard();
+  removeFromList(e.target);
+  addToPickedBoard();
+
+}
+
+function addToBoard(){
+    // console.log(table)
   // var x = table.rows[3].insertCell(-1);
   // x.innerHTML="New cell";
-}
+};
+
+function addToPickedBoard(){}
+
+function removeFromList(e){
+  console.log(e);
+  e.parentNode.parentNode.parentNode.removeChild(e.parentNode.parentNode);
+};
 
