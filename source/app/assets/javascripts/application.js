@@ -50,6 +50,7 @@ function CPPicks(arr) {
   }
 };
 
+//
 function findPlayer(id) {
   var queue = document.querySelector(".queve");
   var availablePlayersCount = queue.children[1].children.length;
