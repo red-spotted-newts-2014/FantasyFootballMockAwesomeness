@@ -46,7 +46,8 @@ function pickPlayer(e){
 function CPPicks(arr) {
   for (var i = 0; i < arr.length; i++) {
     var playerFound = findPlayer(arr[i]);
-    addCPPicks(playerFound);
+    addCPPicks(playerFound, (i+2));
+    removeCPPicks(playerFound);
   }
 };
 
@@ -62,11 +63,17 @@ function findPlayer(id) {
   };
 }
 
-// ADD COMPUTER PICKS TO DRAFTBOARD
+// ADD/REMOVE COMPUTER PICKS TO DRAFTBOARD/AVAILABLE
 
-function addCPPicks(player) {
-  console.log(player);
+function addCPPicks(player, row) {
+  var playerName = player.querySelector("#name").innerHTML;
+  var table = document.querySelector("#mock-draft-table");
+  var entry = table.rows[row].insertCell(-1);
+  entry.innerHTML = playerName;
+}
 
+function removeCPPicks(player) {
+  player.parentNode.removeChild(player);
 }
 
 // ADD YOUR PICKS TO DRAFTBOARD
