@@ -33,21 +33,60 @@
 
         <div class="queve-table">
 
-          <table class="queve">
-            <caption>Available Players</caption>
-            <tbody>
-                <% Player.all.each do |player| %>
-            <tr>
-              <td id="rank"><%= player.rank %></td>
-              <td id="name"><%= player.first_name %> <%= player.last_name %></td>
-              <td id="position"><%= player.position %></td>
-              <td><button id="<%= player.id %>" class="xsmall-button">pick</button></td>
-            </tr>
-            <% end %>
-          </tbody>
-          </table>
-        </div>
-      </section>
+    <table class="queve">
+      <caption>Available Players</caption>
+      <tbody>
+          <% Player.all.each do |player| %>
+      <tr>
+        <td id="rank"><%= player.rank %></td>
+        <td id="name"><%= player.first_name %> <%= player.last_name %></td>
+        <td id="position"><%= player.position %></td>
+        <td><button id="<%= player.id %>" class="xsmall-button">pick</button></td>
+      </tr>
+      <% end %>
+    </tbody>
+    </table>
+  </div>
+</section>
+
+<h2 id="picked-players">Picked Players</h2>
+ <section>
+  <div class="queve-table">
+    <table class="picked">
+      <caption>Picked Players</caption>
+      <tbody>
+      <tr>
+        <td>Rank</td>
+        <td>Name</td>
+        <td>Position</td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+</section>
+<dialog class="modal">
+  <h2>Signup</h2>
+  <%= flash[:notice] %>
+  <%= form_for :user,  url: {action: "create_user"} do |f| %>
+    <%= f.label :email, "Email" %><br />
+    <%= f.text_field :email, placeholder: "user@email.com" %><br><br>
+    <%= f.label :password %><br />
+    <%= f.password_field :password, placeholder: "Password"  %><br><br>
+    <br />
+   <%= f.submit "Sign Up", class: 'button_link' %>
+   <% end %>
+<h2>Login</h2>
+<%= notice %>
+<%= form_for :user, url: {action: "authenticate"} do |f| %>
+  <%= f.label :email %><br>
+  <%= f.text_field :email %><br><br>
+  <%= f.label :password %><br>
+  <%= f.password_field :password %><br><br>
+  <%= f.submit "Log In", class: 'button_link' %><br><br>
+<% end %>
+</dialog>
+<div class="modal-transparent-background">
+</div>
 
       <section class="right">
       <h2 id="picked-players">Picked Players</h2>

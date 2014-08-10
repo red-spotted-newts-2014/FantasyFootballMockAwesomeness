@@ -35,7 +35,7 @@ function pickPlayer(e){
   $.ajax({
     url:"/update",
     method:"POST",
-    data: { id: playerid },
+    data: {id: playerid },
     dataType: 'json'
   }).success(function(data) {
     CPPicks(data);
