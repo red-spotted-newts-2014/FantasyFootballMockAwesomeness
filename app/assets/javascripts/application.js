@@ -46,11 +46,13 @@ function pickPlayer(e){
 function CPPicks(arr) {
   for (var i = 0; i < arr.length; i++) {
     var playerFound = findPlayer(arr[i]);
-    console.log(playerFound);
+    addCPPicks(playerFound, (i+2));
+    removeCPPicks(playerFound);
   }
 };
 
-//
+// Returns row with the player info.
+
 function findPlayer(id) {
   var queue = document.querySelector(".queve");
   var availablePlayersCount = queue.children[1].children.length;
@@ -61,9 +63,18 @@ function findPlayer(id) {
   };
 }
 
-// ADD COMPUTER PICKS TO DRAFTBOARD
+// ADD/REMOVE COMPUTER PICKS TO DRAFTBOARD/AVAILABLE
 
-function add
+function addCPPicks(player, row) {
+  var playerName = player.querySelector("#name").innerHTML;
+  var table = document.querySelector("#mock-draft-table");
+  var entry = table.rows[row].insertCell(-1);
+  entry.innerHTML = playerName;
+}
+
+function removeCPPicks(player) {
+  player.parentNode.removeChild(player);
+}
 
 // ADD YOUR PICKS TO DRAFTBOARD
 
