@@ -1,8 +1,8 @@
 class Computer < ActiveRecord::Base
-	has_many :drafts
-	has_many :picks
+  has_many :drafts
+  has_many :picks
 
-	def initialize(draft_number, num_of_picks)
+  def initialize(draft_number, num_of_picks)
     @draft_number = draft_number
     @num_of_picks = num_of_picks
   end
@@ -38,3 +38,4 @@ class Computer < ActiveRecord::Base
   end 
 
 end
+
