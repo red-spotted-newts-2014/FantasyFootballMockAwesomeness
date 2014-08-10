@@ -1,3 +1,14 @@
+<nav>
+  <ul>
+    <li><button class="large-button" id="signup">signup</button></li>
+    <li><button class="large-button" id="login">login</button></li>
+    <li><button class="large-button" id="create-draft">Create Draft</button></li>
+    <li><button class="large-button" id="profile">profile</button></li>
+    <li><button class="large-button" id="logout">logout</button></li>
+  </ul>
+</nav>
+
+
 <div class="style-div">
   <h3>Fantasy Mock Draft</h3>
   <table id="mock-draft-table">
@@ -59,10 +70,10 @@
       </tbody>
       </table>
     </div>
-  </section class="right">
+</section class="right">
 
 
-  <dialog class="modal">
+<dialog class="modal" id="signup">
   <h2>Signup</h2>
   <%= flash[:notice] %>
   <%= form_for :user,  url: {action: "create_user"} do |f| %>
@@ -82,6 +93,8 @@
     <%= f.password_field :password %><br><br>
     <%= f.submit "Log In", class: 'button_link' %><br><br>
   <% end %>
+</dialog>
+<dialog class="modal" id="questionaire">
 </dialog>
 <div class="modal-transparent-background">
 </div>
