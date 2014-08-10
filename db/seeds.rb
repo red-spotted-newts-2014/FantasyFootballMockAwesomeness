@@ -10,16 +10,19 @@ require 'csv'
 # sid = User.create(email: "sidpatel13@gmail.com", password: "password")
 
 CSV.foreach('db/fmd_player_rankings.csv', :headers => true, :col_sep => ',') do |row|
-  Player.create(rank: row[0], first_name: row[3], last_name: row[2], position: row[4], bye_week: row[7], ADP: row[6])
+  Player.create(rank: row[0], first_name: row[3], last_name: row[2], position: row[4], bye_week: row[7], ADP: row[6], pick_id: (1..144).to_a.sample)
 end
 
 draft = Draft.create(difficulty_level: "easy" , draft_type: "standard" , number_of_rounds: 10, user_id: 1)
-draft2 = Draft.create(difficulty_level: "hard" , draft_type: "standard" , number_of_rounds: 10, user_id: 1)
+draft2 = Draft.create(difficulty_level: "hard" , draft_type: "standard" , number_of_rounds: 10, user_id: 2)
 
+# 6.times do |x|
+# 	User.create(email: (1..6).to_a.sample.to_s + "anth@gmail.com", password: "1234")
+# end
 
-40.times do
-  Pick.create(pick_number: rand(1..10), user_id: rand(4), draft_id: ["1", "2"].sample)
-end
+# 200.times do |x|
+#   Pick.create(pick_number: x, user_id: x%4, draft_id: 1, player_id: x)
+# end
 
 
 
@@ -33,7 +36,7 @@ end
 	# Player.create(rank: 8, first_name: "broheim", last_name: "stamp", position: "RB", bye_week: 7, ADP: 2.27,  pick_id: 8)
 	# Player.create(rank: 9, first_name: "antonio", last_name: "brown", position: "RB", bye_week: 7, ADP: 2.27,  pick_id: 9)
 	# Player.create(rank: 10, first_name: "jenkin", last_name: "hanks", position: "RB", bye_week: 7, ADP: 2.27,  pick_id: 10)
-	# Player.create(rank: 11, first_name: "bob", last_name: "hope", position: "RB", bye_week: 7, ADP: 2.27,  pick_id: 11)	
+	# Player.create(rank: 11, first_name: "bob", last_name: "hope", position: "RB", bye_week: 7, ADP: 2.27,  pick_id: 11)
 	# Player.create(rank: 12, first_name: "kerry", last_name: "stamp", position: "RB", bye_week: 7, ADP: 2.27,  pick_id: 12)
 	# Player.create(rank: 13, first_name: "chow", last_name: "mein", position: "RB", bye_week: 7, ADP: 2.27,  pick_id: 13)
 	# Player.create(rank: 14, first_name: "haslem", last_name: "udonis", position: "RB", bye_week: 7, ADP: 2.27,  pick_id: 14)
