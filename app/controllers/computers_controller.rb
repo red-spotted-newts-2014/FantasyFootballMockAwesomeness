@@ -10,9 +10,10 @@ class ComputersController < ApplicationController
 
   def index
   	@computer = Computer.new(1,4)
-  	@computer_picks = @computer.computer_picks
-  	@player_num = @computer.player_numbers(@computer_picks)
-
+  	@unpicked = @computer.unpicked_players
+    # @computer_picks = @computer.computer_picks
+  	@player_num = @computer.player_numbers(@unpicked)
+    @player_slice = @computer.player_id_slice(@player_num)
   end
 
  def draft_pick
