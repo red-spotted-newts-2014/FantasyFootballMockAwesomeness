@@ -1,23 +1,23 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700,800:bold);
- 
-html { 
-  background: url(background.jpg) no-repeat center center fixed; 
+
+html {
+  background: url(background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
- 
+
 .container {
   width:800px;
   margin-left:auto;
   margin-right:auto;
 }
- 
+
 body {
   font-family:Open Sans;
 }
- 
+
 h1 {
   width :500px;
   color: white;
@@ -34,13 +34,31 @@ h1 {
   margin-right:auto;
   padding: 20px;
 }
- 
+
 h2 {
   font-family: Open Sans;
+  color: white;
   font-weight: 300;
   text-align: center;
 }
- 
+
+h3 {
+  width :500px;
+  color: white;
+  border: 5px double white;
+  font-family: Open Sans;
+  font-size: 2em;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-shadow: 3px 3px darkgreen;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 50px;
+  margin-left:auto;
+  margin-right:auto;
+  padding: 20px;
+}
+
 #draftboard {
   border: 1px dotted gray;
   height: 300px;
@@ -49,14 +67,27 @@ h2 {
   margin-left:auto;
   margin-right:auto;
 }
- 
+
 footer {
   font-family: Open Sans;
   font-weight: 400;
   margin: 20px;
   text-align: center;
 }
- 
+
 button {
   display:block;
+}
+
+section.left {
+  width: 300px;
+  float: left;
+  padding: 50px;
+}
+
+section.right {
+  width:300px;
+  padding:50px;
+  margin-left:50px;
+  float:left;
 }
