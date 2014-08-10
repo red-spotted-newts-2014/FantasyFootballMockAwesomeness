@@ -17,14 +17,16 @@ class Computer < ActiveRecord::Base
 	  	picks.each do |pick|
 	  		pick_player_array << pick.player
 	  	end
-  	unpicked_players = self.all_players - pick_player_array
+    unpicked_players = self.all_players - pick_player_array
   end
 
+# returns picks of the computer
   def computer_picks
   	num_of_comp_picks = @num_of_picks - 1
-  	comp_pick_array = self.unpicked_players.each_slice(num_of_comp_picks).to_a
+    comp_pick_array = self.unpicked_players.each_slice(num_of_comp_picks).to_a
   end
 
+# # return player id
   def player_numbers(player_picked)
     array_numbers = []
     player_picked.each do |x|

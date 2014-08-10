@@ -20,9 +20,9 @@ draft2 = Draft.create(difficulty_level: "hard" , draft_type: "standard" , number
 # 	User.create(email: (1..6).to_a.sample.to_s + "anth@gmail.com", password: "1234")
 # end
 
-200.times do |x|
-  Pick.create(pick_number: x, user_id: x%6, draft_id: 1)
-end
+# 200.times do |x|
+#   Pick.create(pick_number: x, user_id: x%6, draft_id: 1)
+# end
 
 
 
