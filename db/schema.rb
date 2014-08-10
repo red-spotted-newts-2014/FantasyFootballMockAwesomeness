@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20140809154731) do
 
   create_table "picks", force: true do |t|
     t.integer  "pick_number"
+    t.integer  "player_id"
     t.integer  "user_id"
     t.integer  "draft_id"
     t.datetime "created_at"
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 20140809154731) do
   end
 
   add_index "picks", ["draft_id"], name: "index_picks_on_draft_id"
+  add_index "picks", ["player_id"], name: "index_picks_on_player_id"
   add_index "picks", ["user_id"], name: "index_picks_on_user_id"
 
   create_table "players", force: true do |t|
