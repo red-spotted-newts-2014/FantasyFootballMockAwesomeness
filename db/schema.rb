@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140809154731) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "computers", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -27,7 +30,7 @@ ActiveRecord::Schema.define(version: 20140809154731) do
     t.datetime "updated_at"
   end
 
-  add_index "drafts", ["user_id"], name: "index_drafts_on_user_id"
+  add_index "drafts", ["user_id"], name: "index_drafts_on_user_id", using: :btree
 
   create_table "picks", force: true do |t|
     t.integer  "pick_number"
@@ -38,9 +41,9 @@ ActiveRecord::Schema.define(version: 20140809154731) do
     t.datetime "updated_at"
   end
 
-  add_index "picks", ["draft_id"], name: "index_picks_on_draft_id"
-  add_index "picks", ["player_id"], name: "index_picks_on_player_id"
-  add_index "picks", ["user_id"], name: "index_picks_on_user_id"
+  add_index "picks", ["draft_id"], name: "index_picks_on_draft_id", using: :btree
+  add_index "picks", ["player_id"], name: "index_picks_on_player_id", using: :btree
+  add_index "picks", ["user_id"], name: "index_picks_on_user_id", using: :btree
 
   create_table "players", force: true do |t|
     t.integer  "rank"
@@ -54,7 +57,7 @@ ActiveRecord::Schema.define(version: 20140809154731) do
     t.datetime "updated_at"
   end
 
-  add_index "players", ["pick_id"], name: "index_players_on_pick_id"
+  add_index "players", ["pick_id"], name: "index_players_on_pick_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email"
