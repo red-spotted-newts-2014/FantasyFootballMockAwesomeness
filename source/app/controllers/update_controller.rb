@@ -7,6 +7,8 @@ class UpdateController < ApplicationController
       p format
       p "This is after p format"
       format.js
+      format.json {render json: '3'}
+
     end
   end
 end

@@ -35,7 +35,8 @@ function pickPlayer(e){
   $.ajax({
     url:"/update",
     method:"POST",
-    data: playerid.toString()
+    data: { id: playerid },
+    dataType: 'json'
   }).success(function(data) {
     console.log("got success")
   }).fail(function(){console.log("FAILURE")})
