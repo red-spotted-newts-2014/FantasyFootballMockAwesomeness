@@ -21,7 +21,7 @@ draft2 = Draft.create(difficulty_level: "hard" , draft_type: "standard" , number
 # end
 
 # 200.times do |x|
-#   Pick.create(pick_number: x, user_id: x%6, draft_id: 1)
+#   Pick.create(pick_number: x, user_id: x%4, draft_id: 1, player_id: x)
 # end
 
 

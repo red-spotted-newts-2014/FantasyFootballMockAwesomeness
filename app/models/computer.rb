@@ -49,6 +49,25 @@ class Computer < ActiveRecord::Base
     player_id.each_slice(3).to_a
   end
 
+  def get_player_id(players)
+    player_id = []
+    players.each do |player|
+      player_id << player.id
+    end
+    player_id
+  end
+
+  def available_players(draft_number)
+     p "*" * 100
+    p draft_number
+    all_player_id= []
+    available_players = []
+    all_player_id = get_player_id(all_players)
+    all_drafted_id = get_player_id(Pick.where(draft_id: draft_number))
+    available_players = all_player_id - all_drafted_id
+    p available_players
+
+  end
 
 end
 
