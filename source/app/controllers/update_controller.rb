@@ -6,9 +6,7 @@ class UpdateController < ApplicationController
       p "You are in the respond_to block"
       p format
       p "This is after p format"
-      format.js
-      format.json {render json: '3'}
-
+      format.json {render json: '[3, 9, 10]'}
     end
   end
 end

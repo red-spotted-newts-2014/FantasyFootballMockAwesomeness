@@ -38,9 +38,33 @@ function pickPlayer(e){
     data: { id: playerid },
     dataType: 'json'
   }).success(function(data) {
-    console.log("got success")
+    CPPicks(data);
   }).fail(function(){console.log("FAILURE")})
 }
+
+// "Controller" for CP picks.
+function CPPicks(arr) {
+  for (var i = 0; i < arr.length; i++) {
+    var playerFound = findPlayer(arr[i]);
+    console.log(playerFound);
+  }
+};
+
+function findPlayer(id) {
+  var queue = document.querySelector(".queve");
+  var availablePlayersCount = queue.children[1].children.length;
+  for (var i =0; i < availablePlayersCount; i++) {
+    if (queue.children[1].children[i].querySelector("#rank").innerHTML == id) {
+      return queue.children[1].children[i]
+    };
+  };
+}
+
+// ADD COMPUTER PICKS TO DRAFTBOARD
+
+function add
+
+// ADD YOUR PICKS TO DRAFTBOARD
 
 function addToBoard(e, playerName){
   var table = document.querySelector("table");
