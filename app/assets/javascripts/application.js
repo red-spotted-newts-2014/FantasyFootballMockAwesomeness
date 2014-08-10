@@ -46,11 +46,12 @@ function pickPlayer(e){
 function CPPicks(arr) {
   for (var i = 0; i < arr.length; i++) {
     var playerFound = findPlayer(arr[i]);
-    console.log(playerFound);
+    addCPPicks(playerFound);
   }
 };
 
-//
+// Returns row with the player info.
+
 function findPlayer(id) {
   var queue = document.querySelector(".queve");
   var availablePlayersCount = queue.children[1].children.length;
@@ -63,7 +64,10 @@ function findPlayer(id) {
 
 // ADD COMPUTER PICKS TO DRAFTBOARD
 
-function add
+function addCPPicks(player) {
+  console.log(player);
+
+}
 
 // ADD YOUR PICKS TO DRAFTBOARD
 
