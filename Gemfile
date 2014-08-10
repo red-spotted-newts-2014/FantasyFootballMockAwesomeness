@@ -50,6 +50,7 @@ gem 'factory_girl'
 
 # Add rspec-rails to both the :development and :test groups
 group :test, :development do
+  gem 'simplecov'
   gem "rspec-rails", "~> 2.0"
 end
 
