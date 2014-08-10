@@ -14,17 +14,15 @@ class Computer < ActiveRecord::Base
   def unpicked_players
   	pick_player_array = []
   	picks = Pick.where(draft_id: @draft_number)
-	  	picks.each do |pick| 
+	  	picks.each do |pick|
 	  		pick_player_array << pick.player
 	  	end
   	unpicked_players = self.all_players - pick_player_array
-    # unpicked_players.each_slice(3).to_a
   end
 
   def computer_picks
   	num_of_comp_picks = @num_of_picks - 1
   	comp_pick_array = self.unpicked_players.each_slice(num_of_comp_picks).to_a
-    # comp_pick_array.randomize
   end
 
   def player_numbers(player_picked)
@@ -35,7 +33,9 @@ class Computer < ActiveRecord::Base
        end
     end
     array_numbers
-  end 
+  end
+
+
 
 end
 
