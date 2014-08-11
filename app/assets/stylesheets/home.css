@@ -80,15 +80,15 @@ button {
 
 section.left {
   display: inline-block;
-  width: 300px;
+  width: 400px;
   float: left;
 }
 
 section.right {
   display: inline;
-  width: 300px;
+  width: 400px;
   float: left;
-  margin-left: 200px ;
+  margin-left: 100px ;
 }
 
 #panels {
