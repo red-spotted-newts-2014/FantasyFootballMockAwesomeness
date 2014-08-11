@@ -14,7 +14,7 @@ class WelcomeController < ApplicationController
       session[:user] = @user.id
       redirect_to '/', flash: {notice: "Successful log in!"}
     else
-      redirect_to '/', flash: {notice: 'Invalid credentials!' }
+      redirect_to '/', flash: {notice: 'Invalid credentials!'}
     end
   end
 
@@ -30,6 +30,11 @@ class WelcomeController < ApplicationController
     else
       redirect_to '/', flash: {notice: 'Failed'}
     end
+  end
+
+  def questionnaire
+    Draft.create(number_of_rounds: params[:draft][:number_of_rounds], number_of_players: params[:draft][:number_of_players])
+    redirect_to '/'
   end
 
   def sign_out
