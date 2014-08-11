@@ -31,7 +31,7 @@ table {
 
 tr, th, td,thead, tbody, caption {
     background-color: white;
-    border: 1px solid black;
+    border: 1px solid darkgreen;
 }
 
 tr{
@@ -43,6 +43,7 @@ caption{
   background-color: #A8B191;
   font-size: 30px;
 }
+
 tbody tr:nth-child(odd){
   background-color: #A8B191;
 }
