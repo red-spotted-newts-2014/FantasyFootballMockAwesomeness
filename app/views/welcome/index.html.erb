@@ -17,25 +17,20 @@
    <thead>
       <tr>
         <th></th>
-        <th>Round 1</th>
-        <th>Round 2</th>
-        <th>Round 3</th>
-        <th>Round 4</th>
-        <th>Round 5</th>
-        <th>Round 6</th>
-        <th>Round 7</th>
-        <th>Round 8</th>
-        <th>Round 9</th>
-        <th>Round 10</th>
-        <th>Round 11</th>
-        <th>Round 12</th>
+        <% @number_of_rounds.times do |x| %>
+        <th>Round <%=x+1 %></th>
+        <% end %>
       </tr>
    </thead>
    <tbody>
-      <tr></tr>
-      <tr></tr>
-      <tr></tr>
-      <tr></tr>
+    <tr>
+      <th><%=@player_name%></th>
+    </tr>
+      <% @named_players.each do |x| %>
+        <tr>
+          <th><%=x %></th>
+        </tr>
+        <% end %>
    </tbody>
   </table>
 </div>
@@ -129,6 +124,8 @@
 <dialog class="modal" id="questionaire">
   <h2>Draft Questionnaire</h2>
     <%= form_for :draft, url: {action: "questionnaire"} do |f| %>
+      <%= f.label :player_name %><br>
+      <%= f.text_field :player_name %><br>
       <%= f.label :number_of_rounds %> <br>
       <%= f.label 8 %>
       <%= f.radio_button(:number_of_rounds, 8) %>

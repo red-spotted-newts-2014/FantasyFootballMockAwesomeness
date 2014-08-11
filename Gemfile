@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'faker'
 #for user authentication using has_secure_password
 gem 'bcrypt'
 gem 'bcrypt-ruby', '3.1.2'
