@@ -1,3 +1,5 @@
+
+<div class="style-div">
 <nav>
   <ul>
     <li><button class="large-button" id="signup">signup or login</button></li>
@@ -6,7 +8,6 @@
     <li><button class="large-button" id="logout">logout</button></li>
   </ul>
 </nav>
-
 
   <h3>Fantasy Mock Draft</h3>
   <table id="mock-draft-table">
@@ -34,6 +35,7 @@
       <tr></tr>
    </tbody>
   </table>
+</div>
 
 <div class="panels">
 <section class="left">
@@ -75,7 +77,6 @@
 
 <dialog class="modal" id="signup-modal">
   <h2>Signup</h2>
-  <div id="signup">
   <%= flash[:notice] %>
   <%= form_for :user,  url: {action: "create_user"} do |f| %>
     <%= f.label :email, "Email" %><br />
@@ -85,9 +86,8 @@
     <br />
    <%= f.submit "signup", class: 'button_link' %>
    <% end %>
-<<<<<<< HEAD
- </div>
-<div id="login">
+
+
 <h2>Login</h2>
 <%= notice %>
 <%= form_for :user, url: {action: "authenticate"} do |f| %>
@@ -97,7 +97,6 @@
   <%= f.password_field :password %><br>
   <%= f.submit "login", class: 'button_link' %><br>
 <% end %>
-</div>
 </dialog>
 
 <dialog class="modal questionaire">
@@ -121,20 +120,51 @@
   <br><br>
   <%= f.submit "Submit" %>
 <% end %>  
-=======
-  <h2>Login</h2>
-  <%= notice %>
-  <%= form_for :user, url: {action: "authenticate"} do |f| %>
-    <%= f.label :email %><br>
-    <%= f.text_field :email %><br><br>
-    <%= f.label :password %><br>
-    <%= f.password_field :password %><br><br>
-    <%= f.submit "Log In", class: 'button_link' %><br><br>
-  <% end %>
->>>>>>> dc2f533c9fb5e384f0ce6b318be9f31d26874472
 </dialog>
+
 <dialog class="modal" id="questionaire">
 </dialog>
+
+<dialog class="modal questionaire">
+  <h2>Draft Questionnaire</h2>
+  <%= form_for :draft, url: {action: "questionnaire"} do |f| %>
+  <%= f.label :number_of_rounds %> <br>
+  <%= f.label 8 %>
+  <%= f.radio_button(:number_of_rounds, 8) %>
+  <%= f.label 10 %>
+  <%= f.radio_button(:number_of_rounds, 10) %>
+  <%= f.label 12 %>
+  <%= f.radio_button(:number_of_rounds, 12) %>
+  <br><br>
+  <%= f.label :number_of_players %> <br>
+  <%= f.label 8 %>
+  <%= f.radio_button(:number_of_players, 8) %>
+  <%= f.label 10 %>
+  <%= f.radio_button(:number_of_players, 10) %>
+  <%= f.label 12 %>
+  <%= f.radio_button(:number_of_players, 12) %>
+  <br><br>
+  <%= f.submit "Submit" %>
+<% end %>  
+</dialog>
+
+
 <div class="modal-transparent-background">
 </div>
 
+      <section class="right">
+      <h2 id="picked-players">Picked Players</h2>
+
+        <div class="queve-table">
+          <table class="picked">
+            <caption>Picked Players</caption>
+            <tbody>
+            <tr>
+              <td>Rank</td>
+              <td>Name</td>
+              <td>Position</td>
+            </tr>
+          </tbody>
+          </table>
+        </div>
+      </section class="right">

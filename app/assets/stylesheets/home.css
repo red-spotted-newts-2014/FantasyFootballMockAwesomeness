@@ -80,9 +80,19 @@ button {
 }
 
 section.left {
+  width: 300px;
+  float: left;
+  padding: 50px;
+}
+/*
+section.right {
+  width:300px;
+  padding:50px;
+  margin-left:50px;
+  float:left;
   display: inline-block;
   width: 300px;
-}
+}*/
 
 section.right {
   display: inline-block;
