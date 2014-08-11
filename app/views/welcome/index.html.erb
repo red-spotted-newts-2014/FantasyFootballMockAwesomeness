@@ -65,7 +65,7 @@
   </div>
 </section>
 <dialog class="modal">
-  <h4>Signup</h4>
+  <h2>Signup</h2>
   <div id="signup">
   <%= flash[:notice] %>
   <%= form_for :user,  url: {action: "create_user"} do |f| %>
@@ -78,7 +78,7 @@
    <% end %>
  </div>
 <div id="login">
-<h4>Login</h4>
+<h2>Login</h2>
 <%= notice %>
 <%= form_for :user, url: {action: "authenticate"} do |f| %>
   <%= f.label :email %><br>
@@ -91,7 +91,7 @@
 </dialog>
 
 <dialog class="modal questionaire">
-  <h4>Draft Questionnaire</h4>
+  <h2>Draft Questionnaire</h2>
   <%= form_for :draft, url: {action: "questionnaire"} do |f| %>
   <%= f.label :number_of_rounds %> <br>
   <%= f.label 8 %>
