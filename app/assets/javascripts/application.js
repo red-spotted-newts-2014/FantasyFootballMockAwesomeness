@@ -31,16 +31,35 @@ function pickPlayer(e){
   var playerid = e.target.id
   addToBoard(e.target, playerName);
   removeFromList(e.target);
+  limitClick(12);
   addToPickedBoard(e.target);
   $.ajax({
     url:"/update",
     method:"POST",
-    data: { id: playerid },
+    data: {id: playerid },
     dataType: 'json'
   }).success(function(data) {
     CPPicks(data);
   }).fail(function(){console.log("FAILURE")})
 }
+var count = 1
+  // set limit on click
+  function limitClick() {
+    var rounds = 12
+    var buttons = document.querySelectorAll("button");
+      if (count >= rounds) {
+        for (var i=0; i< buttons.length; i++) {
+
+        buttons[i].removeEventListener('click', pickPlayer, false)
+        console.log(buttons[i])
+      }
+     } else {
+        count = count + 1;
+      }
+  }
+
+
+
 
 // "Controller" for CP picks.
 function CPPicks(arr) {

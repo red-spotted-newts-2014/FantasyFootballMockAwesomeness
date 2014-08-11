@@ -1,0 +1,1 @@
+-bash: jruby: command not found
