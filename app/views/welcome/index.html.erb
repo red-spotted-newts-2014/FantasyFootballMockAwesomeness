@@ -64,15 +64,53 @@
 
   <dialog class="modal">
   <h2>Signup</h2>
+  <div id="signup">
   <%= flash[:notice] %>
   <%= form_for :user,  url: {action: "create_user"} do |f| %>
     <%= f.label :email, "Email" %><br />
-    <%= f.text_field :email, placeholder: "user@email.com" %><br><br>
+    <%= f.text_field :email, placeholder: "user@email.com" %><br>
     <%= f.label :password %><br />
-    <%= f.password_field :password, placeholder: "Password"  %><br><br>
+    <%= f.password_field :password, placeholder: "Password"  %><br>
     <br />
-   <%= f.submit "Sign Up", class: 'button_link' %>
+   <%= f.submit "signup", class: 'button_link' %>
    <% end %>
+<<<<<<< HEAD
+ </div>
+<div id="login">
+<h2>Login</h2>
+<%= notice %>
+<%= form_for :user, url: {action: "authenticate"} do |f| %>
+  <%= f.label :email %><br>
+  <%= f.text_field :email %><br>
+  <%= f.label :password %><br>
+  <%= f.password_field :password %><br>
+  <%= f.submit "login", class: 'button_link' %><br>
+<% end %>
+</div>
+</dialog>
+
+<dialog class="modal questionaire">
+  <h2>Draft Questionnaire</h2>
+  <%= form_for :draft, url: {action: "questionnaire"} do |f| %>
+  <%= f.label :number_of_rounds %> <br>
+  <%= f.label 8 %>
+  <%= f.radio_button(:number_of_rounds, 8) %>
+  <%= f.label 10 %>
+  <%= f.radio_button(:number_of_rounds, 10) %>
+  <%= f.label 12 %>
+  <%= f.radio_button(:number_of_rounds, 12) %>
+  <br><br>
+  <%= f.label :number_of_players %> <br>
+  <%= f.label 8 %>
+  <%= f.radio_button(:number_of_players, 8) %>
+  <%= f.label 10 %>
+  <%= f.radio_button(:number_of_players, 10) %>
+  <%= f.label 12 %>
+  <%= f.radio_button(:number_of_players, 12) %>
+  <br><br>
+  <%= f.submit "Submit" %>
+<% end %>  
+=======
   <h2>Login</h2>
   <%= notice %>
   <%= form_for :user, url: {action: "authenticate"} do |f| %>
@@ -82,6 +120,7 @@
     <%= f.password_field :password %><br><br>
     <%= f.submit "Log In", class: 'button_link' %><br><br>
   <% end %>
+>>>>>>> dc2f533c9fb5e384f0ce6b318be9f31d26874472
 </dialog>
 <div class="modal-transparent-background">
 </div>
