@@ -11,7 +11,7 @@ html {
 .container {
   width: 80em;
   margin:auto;
-  border: 2px solid black;
+  /*border: 2px solid black;*/
 }
 
 body {
@@ -40,6 +40,7 @@ h2 {
   color: white;
   font-weight: 300;
   text-align: center;
+  text-shadow: 3px 3px darkgreen;
 }
 
 h3 {
@@ -84,15 +85,6 @@ section.left {
   float: left;
   padding: 50px;
 }
-/*
-section.right {
-  width:300px;
-  padding:50px;
-  margin-left:50px;
-  float:left;
-  display: inline-block;
-  width: 300px;
-}*/
 
 section.right {
   display: inline-block;
@@ -104,4 +96,14 @@ section.right {
 .panels {
   width: 800px;
   margin: auto;
+}
+
+footer {
+  font-family: Open Sans;
+  font-weight: 300;
+  letter-spacing: 2;
+  color: white;
+  text-align: center;
+  clear: both;
+  text-shadow: 3px 3px black;
 }
