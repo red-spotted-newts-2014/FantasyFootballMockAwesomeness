@@ -16,8 +16,5 @@ class ComputersController < ApplicationController
     @player_slice = @computer.player_id_slice(@player_num)
   end
 
- def draft_pick
-
- end
 
 end
