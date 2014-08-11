@@ -30,8 +30,8 @@ table {
 }
 
 tr, th, td,thead, tbody, caption {
-    background-color: white;
-    border: 1px solid darkgreen;
+    background-color: rgba(255,255,255, 0.5);
+    border: 1px solid silver;
 }
 
 tr{
