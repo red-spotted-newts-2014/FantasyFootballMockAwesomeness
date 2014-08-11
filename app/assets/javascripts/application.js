@@ -39,13 +39,21 @@ function modalButtons(event){
     modal.style.display = "inline";
     modal_transparent.style.display = "inline";
   }
+  if(modal_id === "create-draft"){
+    modal = document.querySelector("#questionaire")
+    modal.style.display = "inline";
+    modal_transparent.style.display = "inline";
+  }
 }
 
 function closeModal(e){
   console.log(e.target)
-    modal = document.querySelector("#signup-modal")
-    modal.style.display = "none";
-    e.target.style.display = "none"
+    modals = document.querySelectorAll(".modal")
+    for(var i = 0; i < modals.length;i++){
+    modals[i].style.display = "none";
+
+  }
+  e.target.style.display = "none"
 }
 
 function pickPlayer(e){

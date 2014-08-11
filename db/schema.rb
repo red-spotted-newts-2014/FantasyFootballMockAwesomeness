@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20140809154731) do
     t.string   "difficulty_level"
     t.string   "draft_type"
     t.integer  "number_of_rounds"
+    t.integer  "number_of_players"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
