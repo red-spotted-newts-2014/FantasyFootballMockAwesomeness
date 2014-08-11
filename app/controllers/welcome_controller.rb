@@ -34,7 +34,9 @@ class WelcomeController < ApplicationController
 
   def questionnaire
     Draft.create(number_of_rounds: params[:draft][:number_of_rounds], number_of_players: params[:draft][:number_of_players])
-    redirect_to '/'
+    @num_rounds = params[:draft][:number_of_rounds]
+    @num_players = params[:draft][:number_of_players]
+    render :index
   end
 
   def sign_out
