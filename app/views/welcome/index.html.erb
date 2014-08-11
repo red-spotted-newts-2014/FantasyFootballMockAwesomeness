@@ -10,6 +10,8 @@
 </nav>
 
   <h3>Fantasy Mock Draft</h3>
+  <%= @num_rounds %>
+  <%= @num_players %>
 
   <table id="mock-draft-table">
    <thead>
@@ -38,6 +40,7 @@
   <h2 id="que">Available Players</h2>
     <div class="queve-table">
       <table class="queve">
+      <caption>Available Players</caption>
       <tbody>
           <% Player.all.each do |player| %>
       <tr>
@@ -56,6 +59,7 @@
   <h2 id="picked-players">Picked Players</h2>
     <div class="queve-table">
       <table class="picked">
+        <caption>Picked Players</caption>
         <tbody>
         <tr>
           <td>Rank</td>
