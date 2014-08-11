@@ -99,55 +99,52 @@
 <% end %>
 </dialog>
 
-<dialog class="modal questionaire">
-  <h2>Draft Questionnaire</h2>
-  <%= form_for :draft, url: {action: "questionnaire"} do |f| %>
-  <%= f.label :number_of_rounds %> <br>
-  <%= f.label 8 %>
-  <%= f.radio_button(:number_of_rounds, 8) %>
-  <%= f.label 10 %>
-  <%= f.radio_button(:number_of_rounds, 10) %>
-  <%= f.label 12 %>
-  <%= f.radio_button(:number_of_rounds, 12) %>
-  <br><br>
-  <%= f.label :number_of_players %> <br>
-  <%= f.label 8 %>
-  <%= f.radio_button(:number_of_players, 8) %>
-  <%= f.label 10 %>
-  <%= f.radio_button(:number_of_players, 10) %>
-  <%= f.label 12 %>
-  <%= f.radio_button(:number_of_players, 12) %>
-  <br><br>
-  <%= f.submit "Submit" %>
-<% end %>  
+<dialog class="modal" id="signup-modal">
+  <h2>Signup</h2>
+  <%= flash[:notice] %>
+  <%= form_for :user,  url: {action: "create_user"} do |f| %>
+    <%= f.label :email, "Email" %><br />
+    <%= f.text_field :email, placeholder: "user@email.com" %><br>
+    <%= f.label :password %><br />
+    <%= f.password_field :password, placeholder: "Password"  %><br>
+    <br />
+   <%= f.submit "signup", class: 'button_link' %>
+   <% end %>
+  <div id="login">
+    <h2>Login</h2>
+    <%= notice %>
+    <%= form_for :user, url: {action: "authenticate"} do |f| %>
+      <%= f.label :email %><br>
+      <%= f.text_field :email %><br>
+      <%= f.label :password %><br>
+      <%= f.password_field :password %><br>
+      <%= f.submit "login", class: 'button_link' %><br>
+    <% end %>
+  </div>
 </dialog>
 
 <dialog class="modal" id="questionaire">
-</dialog>
-
-<dialog class="modal questionaire">
   <h2>Draft Questionnaire</h2>
-  <%= form_for :draft, url: {action: "questionnaire"} do |f| %>
-  <%= f.label :number_of_rounds %> <br>
-  <%= f.label 8 %>
-  <%= f.radio_button(:number_of_rounds, 8) %>
-  <%= f.label 10 %>
-  <%= f.radio_button(:number_of_rounds, 10) %>
-  <%= f.label 12 %>
-  <%= f.radio_button(:number_of_rounds, 12) %>
-  <br><br>
-  <%= f.label :number_of_players %> <br>
-  <%= f.label 8 %>
-  <%= f.radio_button(:number_of_players, 8) %>
-  <%= f.label 10 %>
-  <%= f.radio_button(:number_of_players, 10) %>
-  <%= f.label 12 %>
-  <%= f.radio_button(:number_of_players, 12) %>
-  <br><br>
-  <%= f.submit "Submit" %>
-<% end %>  
+    <%= form_for :draft, url: {action: "questionnaire"} do |f| %>
+      <%= f.label :number_of_rounds %> <br>
+      <%= f.label 8 %>
+      <%= f.radio_button(:number_of_rounds, 8) %>
+      <%= f.label 10 %>
+      <%= f.radio_button(:number_of_rounds, 10) %>
+      <%= f.label 12 %>
+      <%= f.radio_button(:number_of_rounds, 12) %>
+      <br><br>
+      <%= f.label :number_of_players %> <br>
+      <%= f.label 8 %>
+      <%= f.radio_button(:number_of_players, 8) %>
+      <%= f.label 10 %>
+      <%= f.radio_button(:number_of_players, 10) %>
+      <%= f.label 12 %>
+      <%= f.radio_button(:number_of_players, 12) %>
+      <br><br>
+      <%= f.submit "Submit" %>
+    <% end %>
 </dialog>
-
 
 <div class="modal-transparent-background">
 </div>
