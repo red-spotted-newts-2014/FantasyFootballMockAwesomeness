@@ -34,8 +34,9 @@ attr_accessor :draft_number, :num_of_picks
 
   def self.name_players(num_of_players)
     player_names = []
-    num_of_players.times do
-      player_names << "anthony"
+    num_of_players.times do|x|
+      x+=1
+      player_names << "computer".concat(x.to_s)
     end
     player_names
   end

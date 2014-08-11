@@ -39,7 +39,7 @@ class WelcomeController < ApplicationController
     Draft.create(number_of_rounds: params[:draft][:number_of_rounds])
     @number_of_rounds = params[:draft][:number_of_rounds].to_i
     @number_of_players = params[:draft][:number_of_players].to_i
-
+    @player_name =  params[:draft][:player_name]
     @named_players = Computer.name_players(@number_of_players)
     render :index
   end

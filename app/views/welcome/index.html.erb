@@ -20,6 +20,9 @@
       </tr>
    </thead>
    <tbody>
+    <tr>
+      <th><%=@player_name%></th>
+    </tr>
       <% @named_players.each do |x| %>
         <tr>
           <th><%=x %></th>
@@ -118,6 +121,8 @@
 <dialog class="modal" id="questionaire">
   <h2>Draft Questionnaire</h2>
     <%= form_for :draft, url: {action: "questionnaire"} do |f| %>
+      <%= f.label :player_name %><br>
+      <%= f.text_field :player_name %><br>
       <%= f.label :number_of_rounds %> <br>
       <%= f.label 8 %>
       <%= f.radio_button(:number_of_rounds, 8) %>
