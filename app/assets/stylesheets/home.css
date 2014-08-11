@@ -80,14 +80,18 @@ button {
 }
 
 section.left {
+  display: inline-block;
   width: 300px;
-  float: left;
-  padding: 50px;
 }
 
 section.right {
+  display: inline-block;
   width:300px;
-  padding:50px;
-  margin-left:50px;
-  float:left;
+  margin-bottom:50px;
+  float:right;
+}
+
+.panels {
+  width: 800px;
+  margin: auto;
 }

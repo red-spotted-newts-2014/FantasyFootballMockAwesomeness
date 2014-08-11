@@ -93,6 +93,11 @@ table.queve, table.picked {
 }
 /*modal*/
 
+#signup-modal {
+  display: none;
+}
+
+
 .modal{
   /* arbitrary styling */
   display: none;
