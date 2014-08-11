@@ -10,6 +10,8 @@ class UpdateController < ApplicationController
     respond_to do |format|
       p "You are in the respond_to block"
       p format
+      p "These are params"
+      p params[:id]
       p "This is after p format"
       send_back = random_array.to_s
       format.json {render json: send_back}

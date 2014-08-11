@@ -4,6 +4,7 @@ class CreateDrafts < ActiveRecord::Migration
       t.string :difficulty_level
       t.string :draft_type
       t.integer :number_of_rounds
+      t.integer :number_of_players
       t.references :user, index: true
 
       t.timestamps
