@@ -1,14 +1,5 @@
-<% @all_players.each do |player| %>
-<%= player.first_name %> <br>
-<% end %>
-<br><br>
-
-<% @computer_picks.each do |x| %>
-  <%= x %>
-<% end %>
-
 <% @player_num.each do |x| %>
-  <%= x %>
+<%= x.id %>
 <% end %>
 
-
+<%= @player_slice %>

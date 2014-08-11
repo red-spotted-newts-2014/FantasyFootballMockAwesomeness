@@ -9,9 +9,9 @@ html {
 }
 
 .container {
-  width:800px;
-  margin-left:auto;
-  margin-right:auto;
+  width: 80em;
+  margin:auto;
+  border: 2px solid black;
 }
 
 body {
@@ -84,10 +84,24 @@ section.left {
   float: left;
   padding: 50px;
 }
-
+/*
 section.right {
   width:300px;
   padding:50px;
   margin-left:50px;
   float:left;
+  display: inline-block;
+  width: 300px;
+}*/
+
+section.right {
+  display: inline-block;
+  width:300px;
+  margin-bottom:50px;
+  float:right;
+}
+
+.panels {
+  width: 800px;
+  margin: auto;
 }

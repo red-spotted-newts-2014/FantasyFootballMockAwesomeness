@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', function(){
   var computers = 3;
   var rounds = 12;
   var table = document.querySelector("table");
-  var buttons = document.querySelectorAll("button");
+  var buttons = document.querySelectorAll(".xsmall-button");
+  var nav_buttons = document.querySelectorAll(".large-button");
 
   // Make user the first row.
 
@@ -23,7 +24,29 @@ document.addEventListener('DOMContentLoaded', function(){
   for (var i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener("click", pickPlayer);
   };
+
+  for (var i = 0; i < nav_buttons.length; i++) {
+      nav_buttons[i].addEventListener("click", modalButtons);
+  };
 });
+
+function modalButtons(event){
+  modal_id = event.target.id
+  modal_transparent = document.querySelector(".modal-transparent-background")
+  modal_transparent.addEventListener("click", closeModal)
+  if (modal_id === "signup"){
+    modal = document.querySelector("#signup-modal")
+    modal.style.display = "inline";
+    modal_transparent.style.display = "inline";
+  }
+}
+
+function closeModal(e){
+  console.log(e.target)
+    modal = document.querySelector("#signup-modal")
+    modal.style.display = "none";
+    e.target.style.display = "none"
+}
 
 function pickPlayer(e){
   var table = document.querySelector("table");
@@ -31,16 +54,35 @@ function pickPlayer(e){
   var playerid = e.target.id
   addToBoard(e.target, playerName);
   removeFromList(e.target);
+  limitClick(12);
   addToPickedBoard(e.target);
   $.ajax({
     url:"/update",
     method:"POST",
-    data: { id: playerid },
+    data: {id: playerid },
     dataType: 'json'
   }).success(function(data) {
     CPPicks(data);
   }).fail(function(){console.log("FAILURE")})
 }
+var count = 1
+  // set limit on click
+  function limitClick() {
+    var rounds = 12
+    var buttons = document.querySelectorAll("button");
+      if (count >= rounds) {
+        for (var i=0; i< buttons.length; i++) {
+
+        buttons[i].removeEventListener('click', pickPlayer, false)
+        console.log(buttons[i])
+      }
+     } else {
+        count = count + 1;
+      }
+  }
+
+
+
 
 // "Controller" for CP picks.
 function CPPicks(arr) {
