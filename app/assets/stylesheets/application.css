@@ -29,26 +29,26 @@ table {
   border-radius: 10px;
 }
 
-tr, th, td,thead, tbody, caption {
-    background-color: white;
-    border: 1px solid darkgreen;
+tr, th, td, thead, tbody, caption {
+  background-color: rgba(255,255,255, 0.5);
+  border: 1px solid silver;
 }
 
-tr{
+tr {
   height: 4em;
 }
 
-caption{
+caption {
+  display:none;
   height: 4em;
   line-height: 100px;
   background-color: #A8B191;
   font-size: 30px;
 }
 
-tbody tr:nth-child(odd){
+tbody tr:nth-child(odd) {
   background-color: #A8B191;
 }
-
 
 /*queve*/
 
@@ -63,33 +63,37 @@ table.queve tr, table.picked tr {
  text-align: center;
 }
 
-table.queve caption, table.picked caption{
- height: 30px;
- text-align: center;
- font-size: 20px;
- line-height: 30px;
+table.picked tr {
+  padding: 0;
+  margin: 0;
+  max-height: 20px;
 }
+
 
 table.queve td:nth-child(1){
   width: 30px;
 }
+
 table.queve td:nth-child(2){
   width: 100px;
 }
-  table.queve td:nth-child(3){
+
+table.queve td:nth-child(3){
   width: 30px;
 }
+
 table.queve td:nth-child(4){
   width: 20px;
 }
 
 table.queve, table.picked {
-  max-height: 100px;
+  max-height: 30px;
   line-height: 30px;
   width: 100%;
   overflow: scroll;
 }
-.queve-table{
+
+.queve-table, .picked {
   max-height: 200px;
   width: 400px;
   overflow-y: scroll;
