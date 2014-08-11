@@ -1,7 +1,9 @@
 class WelcomeController < ApplicationController
 
   def index
+    @number_of_rounds = 12
 
+     @named_players =Computer.name_players(4)
   end
 
   def login
@@ -33,8 +35,13 @@ class WelcomeController < ApplicationController
   end
 
   def questionnaire
-    Draft.create(number_of_rounds: params[:draft][:number_of_rounds], number_of_players: params[:draft][:number_of_players])
-    redirect_to '/'
+    # Draft.create(number_of_rounds: params[:draft][:number_of_rounds], number_of_players: params[:draft][:number_of_players])
+    Draft.create(number_of_rounds: params[:draft][:number_of_rounds])
+    @number_of_rounds = params[:draft][:number_of_rounds].to_i
+    @number_of_players = params[:draft][:number_of_players].to_i
+
+    @named_players = Computer.name_players(@number_of_players)
+    render :index
   end
 
   def sign_out

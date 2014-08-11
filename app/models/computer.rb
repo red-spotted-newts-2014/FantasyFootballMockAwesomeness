@@ -1,3 +1,5 @@
+require 'faker'
+
 class Computer < ActiveRecord::Base
   has_many :drafts
   has_many :picks
@@ -28,6 +30,14 @@ attr_accessor :draft_number, :num_of_picks
     all_drafted_id = get_player_id(Pick.where(draft_id: draft_number))
     available_players = all_player_id - all_drafted_id
     available_players
+  end
+
+  def self.name_players(num_of_players)
+    player_names = []
+    num_of_players.times do
+      player_names << "anthony"
+    end
+    player_names
   end
 
 end

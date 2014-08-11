@@ -11,13 +11,13 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // Make user the first row.
 
-  table.rows[1].insertCell(-1).innerHTML = "You";
+  // table.rows[1].insertCell(-1).innerHTML = "You";
 
   // Make the other rows for the computer.
 
-  for (var i = 2; i <= (you + computers); i++) {
-    table.rows[i].insertCell(-1).innerHTML = "Computer";
-  }
+  // for (var i = 2; i <= (you + computers); i++) {
+  //   table.rows[i].insertCell(-1).innerHTML = "Computer";
+  // }
 
   // Adds event listener to buttons in list of available players.
 
@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function(){
   };
 });
 
+// modal
 function modalButtons(event){
   modal_id = event.target.id
   modal_transparent = document.querySelector(".modal-transparent-background")
@@ -51,7 +52,6 @@ function closeModal(e){
     modals = document.querySelectorAll(".modal")
     for(var i = 0; i < modals.length;i++){
     modals[i].style.display = "none";
-
   }
   e.target.style.display = "none"
 }
@@ -73,6 +73,13 @@ function pickPlayer(e){
     CPPicks(data);
   }).fail(function(){console.log("FAILURE")})
 }
+
+// createTable(event){
+//   event.preventDefault()
+//   console.log(event)
+// }
+
+
 var count = 1
   // set limit on click
   function limitClick() {
@@ -88,9 +95,6 @@ var count = 1
         count = count + 1;
       }
   }
-
-
-
 
 // "Controller" for CP picks.
 function CPPicks(arr) {
