@@ -81,9 +81,6 @@ var count = 1
       }
   }
 
-
-
-
 // "Controller" for CP picks.
 function CPPicks(arr) {
   for (var i = 0; i < arr.length; i++) {
