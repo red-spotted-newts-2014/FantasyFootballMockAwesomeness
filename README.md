@@ -1,6 +1,8 @@
 Fantasy Football Mock Awesomeness
 ==============================
 
+[Fantasy Football Mock Draft](http://fantasy-football-mock-draft.herokuapp.com)
+
 Created by: Sid Patel, Anthony Edwards, Cassie Moy, Fahia Mohamed
 
 
